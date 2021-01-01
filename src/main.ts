@@ -1,9 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
+import '@/styles/index.scss'
 import router from "./router";
 import store from "./store";
+import '@/styles/element-variables.scss'
 import ElementUI from 'element-ui';
-import '@/style/index.scss'
 import SvgIcon from 'vue-svgicon'
 import 'element-ui/lib/theme-chalk/index.css';
 import 'normalize.css'
@@ -24,7 +25,7 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  // store,
+  store,
   render: h => h(App)
 }).$mount("#app");
 

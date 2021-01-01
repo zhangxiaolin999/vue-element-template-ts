@@ -76,8 +76,14 @@ export default class extends Vue {
       if (valid) {
         const md32 = hex_md5(this.loginForm.password);
         await UserModule.Login(
-         Object.assign({ method: 'route5g.login', username: this.loginForm.username, password: upperCase(md32) })
-        );
+          Object.assign({
+            method: "route5g.login",
+            username: this.loginForm.username,
+            password: upperCase(md32),
+          })
+        ).then((res) => {
+          this.$router.push({ path: "/" });
+        });
       } else {
         return false;
       }
